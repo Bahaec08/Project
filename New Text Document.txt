@@ -1,0 +1,38 @@
+<script setup>
+  import { onMounted } from "vue";
+  import { useSwalSuccess } from "../Complosables/alert";
+
+  defineProps({
+    message: {
+    type: String,
+    required: true,
+  }
+ }); 
+
+  onMounted(() => {
+  useSwalSuccess(this.message);
+  this.$emit('close');
+});
+</script>
+<template>
+  <div></div>
+</template>
+
+// <script>
+// import { useSwalSuccess } from "../Complosables/alert";
+
+
+// export default {
+//   mounted() {
+//     useSwalSuccess(this.message);
+//     this.$emit('close')
+//   },
+//   props: {
+//     message: {
+//       type: String,
+//       required: true,
+//     },
+//   }
+// };
+
+// </script>
